@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>颐幼乐融 - 专注老幼同养个性课程</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome -->
+    <link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <!-- 自定义CSS -->
+    <link href="css/style.css" rel="stylesheet">
+    <!-- 自定义配置 -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#6A1B9A', // 紫色主题
+                        secondary: '#FFC107', // 黄色强调
+                        accent: '#FF5722', // 橙色点缀
+                        blue: '#2196F3', // 蓝色背景
+                    },
+                    fontFamily: {
+                        sans: ['Helvetica', 'Arial', 'sans-serif'],
+                    },
+                },
+            }
+        }
+    </script>
+    <style type="text/tailwindcss">
+        @layer utilities {
+            .content-auto {
+                content-visibility: auto;
+            }
+            .text-shadow {
+                text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+            }
+            .card-hover {
+                transition: transform 0.3s ease, box-shadow 0.3s ease;
+            }
+            .card-hover:hover {
+                transform: translateY(-5px);
+                box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+            }
+        }
+    </style>
+</head>
+<body class="bg-gray-100 font-sans">
+    <!-- 顶部信息栏 -->
+    <div class="bg-primary text-white py-2 px-4">
+        <div class="container mx-auto flex justify-between items-center">
+            <div class="flex items-center space-x-2">
+                <span class="font-bold">颐幼乐融</span>
+                <span class="text-sm opacity-80">专注老幼同养个性课程</span>
+            </div>
+            <div class="flex items-center space-x-4">
+                <i class="fa fa-phone"></i>
+                <span class="font-bold">400-601-6869</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- 导航栏 -->
+    <nav class="bg-white shadow-md sticky top-0 z-50">
+        <div class="container mx-auto px-4">
+            <div class="flex justify-between items-center h-16">
+                <!-- Logo -->
+                <div class="flex items-center">
+                    <div class="text-primary font-bold text-2xl flex items-center">
+                        <i class="fa fa-graduation-cap mr-2"></i>
+                        <span>颐幼乐融</span>
+                    </div>
+                </div>
+                
+                <!-- 桌面导航 -->
+                <div class="hidden md:flex space-x-8">
+                    <a href="#" class="text-primary font-medium border-b-2 border-primary py-4">首页</a>
+                    <a href="#courses" class="text-gray-700 hover:text-primary transition-colors py-4">课程</a>
+                    <a href="#news" class="text-gray-700 hover:text-primary transition-colors py-4">新闻</a>
+                    <a href="#qa" class="text-gray-700 hover:text-primary transition-colors py-4">问答</a>
+                    <a href="#locations" class="text-gray-700 hover:text-primary transition-colors py-4">校区</a>
+                    <a href="#teachers" class="text-gray-700 hover:text-primary transition-colors py-4">师资</a>
+                    <a href="#reviews" class="text-gray-700 hover:text-primary transition-colors py-4">评价</a>
+                </div>
+                
+                <!-- 移动端菜单按钮 -->
+                <div class="md:hidden">
+                    <button id="mobile-menu-button" class="text-gray-700 hover:text-primary focus:outline-none">
+                        <i class="fa fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- 移动端导航菜单 -->
+        <div id="mobile-menu" class="md:hidden hidden bg-white border-t">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="#" class="block px-3 py-2 text-primary font-medium rounded-md">首页</a>
+                <a href="#courses" class="block px-3 py-2 text-gray-700 hover:bg-gray-50 rounded-md">课程</a>
+                <a href="#news" class="block px-3 py-2 text-gray-700 hover:bg-gray-50 rounded-md">新闻</a>
+                <a href="#qa" class="block px-3 py-2 text-gray-700 hover:bg-gray-50 rounded-md">问答</a>
+                <a href="#locations" class="block px-3 py-2 text-gray-700 hover:bg-gray-50 rounded-md">校区</a>
+                <a href="#teachers" class="block px-3 py-2 text-gray-700 hover:bg-gray-50 rounded-md">师资</a>
+                <a href="#reviews" class="block px-3 py-2 text-gray-700 hover:bg-gray-50 rounded-md">评价</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 横幅部分 -->
+    <section class="relative overflow-hidden bg-blue">
+        <div class="container mx-auto px-4 py-16 md:py-24">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                <div class="text-white">
+                    <h2 class="text-3xl md:text-5xl font-bold mb-4 text-shadow">老幼个性定制课程</h2>
+                    <ul class="space-y-2">
+                        <li class="flex items-center bg-white/20 px-4 py-2 rounded-lg">
+                            <i class="fa fa-check-circle text-secondary mr-2"></i>
+                            <span>促进幼儿思想发展</span>
+                        </li>
+                        <li class="flex items-center bg-white/20 px-4 py-2 rounded-lg">
+                            <i class="fa fa-check-circle text-secondary mr-2"></i>
+                            <span>提供银龄生活解压</span>
+                        </li>
+                        <li class="flex items-center bg-white/20 px-4 py-2 rounded-lg">
+                            <i class="fa fa-check-circle text-secondary mr-2"></i>
+                            <span>适应老幼生活节奏</span>
+                        </li>
+                        <li class="flex items-center bg-white/20 px-4 py-2 rounded-lg">
+                            <i class="fa fa-check-circle text-secondary mr-2"></i>
+                            <span>促进老幼同养推广</span>
+                        </li>
+                    </ul>
+                    <div class="mt-8">
+                        <button class="bg-secondary text-gray-800 px-6 py-3 rounded-md font-bold hover:bg-secondary/90 transition-colors mr-4">立即咨询</button>
+                        <button class="bg-white text-primary px-6 py-3 rounded-md font-bold hover:bg-gray-100 transition-colors">了解更多</button>
+                    </div>
+                </div>
+                <div class="hidden md:block">
+                    <img src="https://picsum.photos/id/64/600/400" alt="老幼个性定制课程" class="rounded-lg shadow-2xl transform hover:scale-105 transition-transform duration-500">
+                </div>
+            </div>
+        </div>
+        <!-- 装饰元素 -->
+        <div class="absolute top-0 left-0 w-full h-full bg-blue opacity-20">
+            <div class="absolute top-10 left-10 w-20 h-20 rounded-full bg-white/10"></div>
+            <div class="absolute bottom-20 right-20 w-32 h-32 rounded-full bg-white/10"></div>
+            <div class="absolute top-1/2 left-1/4 w-16 h-16 rounded-full bg-white/10"></div>
+        </div>
+    </section>
+
+    <!-- 热门课程部分 -->
+    <section id="courses" class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12">热门课程</h2>
+            
+            <!-- 课程分类标签 -->
+            <div class="flex flex-wrap justify-center gap-4 mb-12">
+                <button class="px-6 py-2 bg-primary text-white rounded-md font-medium">幼儿课程</button>
+                <button class="px-6 py-2 bg-gray-200 text-gray-700 rounded-md font-medium hover:bg-gray-300 transition-colors">银龄课程</button>
+                <button class="px-6 py-2 bg-gray-200 text-gray-700 rounded-md font-medium hover:bg-gray-300 transition-colors">个性课程</button>
+                <button class="px-6 py-2 bg-gray-200 text-gray-700 rounded-md font-medium hover:bg-gray-300 transition-colors">定制课堂</button>
+            </div>
+            
+            <!-- 课程列表 -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- 课程卡片 1 -->
+                <div class="bg-white rounded-lg shadow-lg overflow-hidden card-hover">
+                    <div class="relative">
+                        <img src="https://picsum.photos/id/20/600/300" alt="幼儿启蒙" class="w-full h-48 object-cover">
+                        <div class="absolute bottom-0 left-0 bg-purple-700 text-white px-4 py-2 font-bold">
+                            幼儿启蒙
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex justify-between items-center mb-4">
+                            <h3 class="text-xl font-bold">幼儿启蒙</h3>
+                            <span class="text-accent font-bold flex items-center">
+                                <i class="fa fa-fire text-accent mr-1"></i>热门
+                            </span>
+                        </div>
+                        <p class="text-gray-600 mb-2"><span class="font-medium">招生对象：</span>高中1-3年级学生</p>
+                        <p class="text-gray-600 mb-4"><span class="font-medium">授课班型：</span>一对一教学、小班教学</p>
+                        <a href="#" class="text-primary flex items-center justify-end font-medium hover:underline">
+                            查看详情
+                            <i class="fa fa-arrow-right ml-2"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- 课程卡片 2 -->
+                <div class="bg-white rounded-lg shadow-lg overflow-hidden card-hover">
+                    <div class="relative">
+                        <img src="https://picsum.photos/id/26/600/300" alt="银龄享乐" class="w-full h-48 object-cover">
+                        <div class="absolute bottom-0 left-0 bg-blue-700 text-white px-4 py-2 font-bold">
+                            银龄享乐
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex justify-between items-center mb-4">
+                            <h3 class="text-xl font-bold">银龄享乐</h3>
+                            <span class="text-accent font-bold flex items-center">
+                                <i class="fa fa-fire text-accent mr-1"></i>热门
+                            </span>
+                        </div>
+                        <p class="text-gray-600 mb-2"><span class="font-medium">招生对象：</span>中老年龄学生</p>
+                        <p class="text-gray-600 mb-4"><span class="font-medium">授课班型：</span>一对一教学、小班教学</p>
+                        <a href="#" class="text-primary flex items-center justify-end font-medium hover:underline">
+                            查看详情
+                            <i class="fa fa-arrow-right ml-2"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- 课程卡片 3 -->
+                <div class="bg-white rounded-lg shadow-lg overflow-hidden card-hover">
+                    <div class="relative">
+                        <img src="https://picsum.photos/id/96/600/300" alt="十人课堂" class="w-full h-48 object-cover">
+                        <div class="absolute bottom-0 left-0 bg-green-700 text-white px-4 py-2 font-bold">
+                            特色课程
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex justify-between items-center mb-4">
+                            <h3 class="text-xl font-bold">十人课堂</h3>
+                            <span class="text-accent font-bold flex items-center">
+                                <i class="fa fa-fire text-accent mr-1"></i>热门
+                            </span>
+                        </div>
+                        <p class="text-gray-600 mb-2"><span class="font-medium">招生对象：</span>幼儿，老年学生</p>
+                        <p class="text-gray-600 mb-4"><span class="font-medium">授课班型：</span>小班教学（8-10人）</p>
+                        <a href="#" class="text-primary flex items-center justify-end font-medium hover:underline">
+                            查看详情
+                            <i class="fa fa-arrow-right ml-2"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- 查看更多按钮 -->
+            <div class="text-center mt-12">
+                <button class="px-8 py-3 border-2 border-primary text-primary font-bold rounded-md hover:bg-primary hover:text-white transition-colors">
+                    查看全部课程
+                </button>
+            </div>
+            
+            <!-- 新闻动态区域 -->
+            <div class="mt-16">
+                <h2 class="text-3xl font-bold text-center mb-8">新闻动态</h2>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <!-- 新闻卡片1 -->
+                    <div class="bg-white rounded-lg shadow-md overflow-hidden news-card">
+                        <img src="https://picsum.photos/id/34/600/300" alt="新闻图片1" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <span class="text-sm text-gray-500">2023-06-15</span>
+                            <h3 class="text-xl font-bold mt-2 mb-3">暑期课程优惠活动开启</h3>
+                            <p class="text-gray-600 mb-4">即日起至7月底，报名暑期课程享受8折优惠，还有精美礼品赠送。</p>
+                            <a href="#" class="text-primary font-medium hover:underline">查看详情</a>
+                        </div>
+                    </div>
+                    
+                    <!-- 新闻卡片2 -->
+                    <div class="bg-white rounded-lg shadow-md overflow-hidden news-card">
+                        <img src="https://picsum.photos/id/35/600/300" alt="新闻图片2" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <span class="text-sm text-gray-500">2023-06-10</span>
+                            <h3 class="text-xl font-bold mt-2 mb-3">新校区盛大开业</h3>
+                            <p class="text-gray-600 mb-4">我们位于市中心的新校区正式开业，环境优美，设施齐全，欢迎参观。</p>
+                            <a href="#" class="text-primary font-medium hover:underline">查看详情</a>
+                        </div>
+                    </div>
+                    
+                    <!-- 新闻卡片3 -->
+                    <div class="bg-white rounded-lg shadow-md overflow-hidden news-card">
+                        <img src="https://picsum.photos/id/36/600/300" alt="新闻图片3" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <span class="text-sm text-gray-500">2023-06-05</span>
+                            <h3 class="text-xl font-bold mt-2 mb-3">名师讲座即将举行</h3>
+                            <p class="text-gray-600 mb-4">特邀教育专家张教授来我校举办讲座，分享最新教育理念和方法。</p>
+                            <a href="#" class="text-primary font-medium hover:underline">查看详情</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 底部联系按钮 -->
+    <section class="fixed bottom-0 left-0 right-0 bg-white shadow-lg py-1 px-2 z-40">
+        <div class="container mx-auto flex flex-wrap justify-between items-center gap-4">
+            <button id="open-course-modal" class="flex-1 min-w-[140px] bg-primary/10 text-primary font-bold py-3 rounded-md flex items-center justify-center hover:bg-primary/20 transition-colors">
+                <i class="fa fa-pencil-square-o mr-2"></i>
+                预约试听
+            </button>
+            <button id="open-chat-modal" class="flex-1 min-w-[120px] bg-blue text-white font-bold py-3 rounded-md flex items-center justify-center hover:bg-blue/90 transition-colors">
+                <i class="fa fa-comments-o mr-2"></i>
+                在线咨询
+            </button>
+            <button class="flex-1 min-w-[140px] bg-accent text-white font-bold py-3 rounded-md flex items-center justify-center hover:bg-accent/90 transition-colors">
+                <i class="fa fa-phone mr-2"></i>
+                电话咨询
+            </button>
+        </div>
+    </section>
+
+    <!-- 页脚 -->
+    <footer class="bg-gray-800 text-white py-5 mt-5">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-xl font-bold mb-4">颐幼乐融</h3>
+                    <p class="text-gray-400 mb-2">专注幼儿，老人个性化教育，促进老幼同养目标。</p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                            <i class="fa fa-weixin text-xl"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                            <i class="fa fa-weibo text-xl"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                            <i class="fa fa-qq text-xl"></i>
+                        </a>
+                    </div>
+                </div>
+                <div>
+                    <h3 class="text-lg font-bold mb-4">快速链接</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">首页</a></li>
+                        <li><a href="#courses" class="text-gray-400 hover:text-white transition-colors">课程</a></li>
+                        <li><a href="#news" class="text-gray-400 hover:text-white transition-colors">新闻</a></li>
+                        <li><a href="#qa" class="text-gray-400 hover:text-white transition-colors">问答</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-lg font-bold mb-4">关于我们</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#locations" class="text-gray-400 hover:text-white transition-colors">校区分布</a></li>
+                        <li><a href="#teachers" class="text-gray-400 hover:text-white transition-colors">师资团队</a></li>
+                        <li><a href="#reviews" class="text-gray-400 hover:text-white transition-colors">学员评价</a></li>
+                        <li><a href="#about" class="text-gray-400 hover:text-white transition-colors">公司介绍</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-lg font-bold mb-4">联系我们</h3>
+                    <ul class="space-y-3">
+                        <li class="flex items-start">
+                            <i class="fa fa-phone mr-3 mt-1 text-gray-400"></i>
+                            <span>400-601-6869</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fa fa-envelope-o mr-3 mt-1 text-gray-400"></i>
+                            <span>contact@xinghuoedu.com</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fa fa-map-marker mr-3 mt-1 text-gray-400"></i>
+                            <span>北京市海淀区中关村南大街5号</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-gray-700 mt-8 pt-8 text-center text-gray-400">
+                <p>© 2023 星火教育 版权所有 | 京ICP备12345678号</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- 预约试听模态框 -->
+    <div id="course-modal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 hidden">
+        <div class="bg-white rounded-lg p-6 w-11/12 max-w-md">
+            <div class="flex justify-between items-center mb-4">
+                <h3 class="text-xl font-bold">选择课程</h3>
+                <button id="close-course-modal" class="text-gray-500 hover:text-gray-700">
+                    <i class="fa fa-times"></i>
+                </button>
+            </div>
+            <div class="space-y-3">
+                <button class="w-full text-left px-4 py-3 border border-gray-300 rounded-md hover:bg-gray-50 transition-colors">
+                    幼儿启蒙课程
+                </button>
+                <button class="w-full text-left px-4 py-3 border border-gray-300 rounded-md hover:bg-gray-50 transition-colors">
+                    银龄享乐课程
+                </button>
+                <button class="w-full text-left px-4 py-3 border border-gray-300 rounded-md hover:bg-gray-50 transition-colors">
+                    十人课堂课程
+                </button>
+                <button class="w-full text-left px-4 py-3 border border-gray-300 rounded-md hover:bg-gray-50 transition-colors">
+                    中小学个性化课程
+                </button>
+                <button class="w-full text-left px-4 py-3 border border-gray-300 rounded-md hover:bg-gray-50 transition-colors">
+                    高中强化课程
+                </button>
+            </div>
+            <div class="mt-6">
+                <button id="confirm-course" class="w-full bg-primary text-white py-3 rounded-md font-bold hover:bg-blue-700 transition-colors">
+                    确认预约
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- 在线咨询模态框 -->
+    <div id="chat-modal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 hidden">
+        <div class="bg-white rounded-lg p-6 w-11/12 max-w-md">
+            <div class="flex justify-between items-center mb-4">
+                <h3 class="text-xl font-bold">在线咨询</h3>
+                <button id="close-chat-modal" class="text-gray-500 hover:text-gray-700">
+                    <i class="fa fa-times"></i>
+                </button>
+            </div>
+            <div class="mb-4 h-64 overflow-y-auto bg-gray-100 p-4 rounded-md">
+                <div class="mb-3">
+                    <div class="inline-block bg-blue-500 text-black rounded-lg px-2 py-2">
+                        您好！欢迎咨询颐幼乐融，请问有什么可以帮助您的吗？
+                    </div>
+                </div>
+                <!-- 聊天记录将在这里动态添加 -->
+            </div>
+            <div class="flex">
+                <input type="text" id="chat-input" placeholder="请输入您的问题..." class="flex-1 border border-gray-300 rounded-l-md px-8 py-2 focus:outline-none">
+                <button id="send-message" class="bg-primary text-white px-4 py-2 rounded-r-md hover:bg-blue-700 transition-colors">
+                    发送
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript -->
+    <script>
+        // 移动端菜单切换
+        document.getElementById('mobile-menu-button').addEventListener('click', function() {
+            const mobileMenu = document.getElementById('mobile-menu');
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // 平滑滚动
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80, // 考虑导航栏高度
+                        behavior: 'smooth'
+                    });
+                    
+                    // 关闭移动端菜单
+                    document.getElementById('mobile-menu').classList.add('hidden');
+                }
+            });
+        });
+
+        // 滚动监听，添加导航栏阴影
+        window.addEventListener('scroll', function() {
+            const nav = document.querySelector('nav');
+            if (window.scrollY > 10) {
+                nav.classList.add('shadow-lg');
+                nav.classList.remove('shadow-md');
+            } else {
+                nav.classList.add('shadow-md');
+                nav.classList.remove('shadow-lg');
+            }
+        });
+
+        // 预约试听模态框控制
+        const courseModal = document.getElementById('course-modal');
+        const openCourseModalBtn = document.getElementById('open-course-modal'); // 预约试听按钮
+        const closeCourseModalBtn = document.getElementById('close-course-modal');
+        const confirmCourseBtn = document.getElementById('confirm-course');
+
+        // 在线咨询模态框控制
+        const chatModal = document.getElementById('chat-modal');
+        const openChatModalBtn = document.getElementById('open-chat-modal'); // 在线咨询按钮
+        const closeChatModalBtn = document.getElementById('close-chat-modal');
+        const sendMessageBtn = document.getElementById('send-message');
+        const chatInput = document.getElementById('chat-input');
+        const chatHistory = chatModal.querySelector('.overflow-y-auto');
+
+        // 打开预约试听模态框
+        openCourseModalBtn.addEventListener('click', function(e) {
+            e.stopPropagation(); // 阻止事件冒泡
+            courseModal.classList.remove('hidden');
+        });
+
+        // 关闭预约试听模态框
+        closeCourseModalBtn.addEventListener('click', function() {
+            courseModal.classList.add('hidden');
+        });
+
+        // 确认预约课程
+        confirmCourseBtn.addEventListener('click', function() {
+            alert('预约成功！我们的工作人员会尽快联系您。');
+            courseModal.classList.add('hidden');
+        });
+
+        // 打开在线咨询模态框
+        openChatModalBtn.addEventListener('click', function(e) {
+            e.stopPropagation(); // 阻止事件冒泡
+            chatModal.classList.remove('hidden');
+        });
+
+        // 关闭在线咨询模态框
+        closeChatModalBtn.addEventListener('click', function() {
+            chatModal.classList.add('hidden');
+        });
+
+        // 发送消息功能
+        sendMessageBtn.addEventListener('click', function() {
+            const message = chatInput.value.trim();
+            if (message) {
+                // 添加用户消息
+                const userMessage = document.createElement('div');
+                userMessage.className = 'mb-3 text-right';
+                userMessage.innerHTML = `<div class="inline-block bg-primary text-white rounded-lg px-4 py-2">${message}</div>`;
+                chatHistory.appendChild(userMessage);
+                
+                // 清空输入框
+                chatInput.value = '';
+                
+                // 模拟回复
+                setTimeout(() => {
+                    const botMessage = document.createElement('div');
+                    botMessage.className = 'mb-3';
+                    botMessage.innerHTML = `<div class="inline-block bg-blue-500 text-white rounded-lg px-4 py-2">感谢您的咨询，我们会尽快为您提供详细解答。</div>`;
+                    chatHistory.appendChild(botMessage);
+                    
+                    // 滚动到底部
+                    chatHistory.scrollTop = chatHistory.scrollHeight;
+                }, 1000);
+                
+                // 滚动到底部
+                chatHistory.scrollTop = chatHistory.scrollHeight;
+            }
+        });
+
+        // 回车发送消息
+        chatInput.addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                sendMessageBtn.click();
+            }
+        });
+
+        // 点击模态框外部关闭模态框
+        window.addEventListener('click', function(e) {
+            if (e.target === courseModal) {
+                courseModal.classList.add('hidden');
+            }
+            if (e.target === chatModal) {
+                chatModal.classList.add('hidden');
+            }
+        });
+    </script>
+</body>
+</html>
